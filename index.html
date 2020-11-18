@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NPS-API</title>
-    <link rel="shortcut" href="">
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -14,17 +14,20 @@
 <main>
     <h2>Search for your parks below.</h2>
     <form id="parkForm">
-        <label for="state">Enter state to explore :</label>
+        <label for="stateName">Enter state to explore :</label>
         <input type="text" id="stateName" placeholder="LA,TX,AR" required>
         <br>
-        <label for="numberResults">Enter number of parks to see :</label>
+        <label for="maxNumber">Enter number of parks to see :</label>
         <input type="number" id="maxNumber" name="maxNumber" value="10">
         <br>
         <input type="submit" value="Search">
     </form>
-    <h2 id="results"></h2>    
-    <ul id="results-list">
-    </ul>
+    
+    <section id="js-results">
+        <h2 id="results" class="hidden">results pending...</h2>    
+        <ul id="results-list">
+        </ul>
+    </section>
 </main> 
 
     <script

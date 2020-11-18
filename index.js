@@ -1,3 +1,5 @@
+'use strict';
+
 const sourceURL = 'https://api.nps.gov/api/v1/parks';
 const apiKey = 'IFPvrwci5NG47ZUfz32lb1vGuY2tYzN9Mg75JNd1';
 
@@ -34,6 +36,7 @@ function getSearchResults(query, maxResults) {
     })
     .then(response => renderParkResults(response.data))
     .catch(err =>alert('Please try again'))
+    $('#results').removeClass('hidden');
 }
 
 function renderParkResults(parkList){
@@ -45,6 +48,7 @@ function renderParkResults(parkList){
     <p>${item.description}</p><a href=${item.url}>Park's Website</a><div id="addresses"><h5>${item.addresses[0].type}:</h5><p class="addresses">${item.addresses[0].line1}</p><p class="addresses">${item.addresses[0].city}</p><p class="addresses">${item.addresses[0].stateCode}</p>
     <p class="addresses">${item.addresses[0].city}, ${item.addresses[0].stateCode}, ${item.addresses[0].postalCode}</p></div></li>`)
     });
+    
 }
 
 function init() {
